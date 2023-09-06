@@ -4,15 +4,22 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import styles from './App.module.scss'
+import { useState } from 'react';
 
 function App() {
+  const [color, setColor] = useState('blue');
+
+  const changeColor = (value: any) => {setColor(value)}
+
+  console.log('color: ', color)
+
   return (
     <>
       <Container>
         <Row className="justify-content-md-center">
           <Col md="auto">
             <section className={styles.doors}>
-              <div className={styles.door}>
+              <div className={styles.door} style={{background: color}}>
                 <span>front view</span>
               </div>
               <div className={styles.door}>
@@ -24,7 +31,7 @@ function App() {
             <h1>Doors config</h1>
             <Form.Group className="mb-3">
               <Form.Label>Main color</Form.Label>
-              <Form.Select>
+              <Form.Select value={color} onChange={e => changeColor(e.target.value)}>
                 <option>red</option>
                 <option>blue</option>
                 <option>green</option>
