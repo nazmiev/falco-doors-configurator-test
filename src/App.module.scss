@@ -9,17 +9,30 @@
     .door {
         width: 200px;
         height: 500px;
+        border-radius: 10px;
         background-color: #fff;
         position: relative;
         display: flex;
         justify-content: center;
+        align-items: center;
+        .film {
+            width: 85%;
+            height: 95%;
+            .handle {
+                position: absolute;
+                top: 50%;
+                left: 8%;
+                width: 71px;
+                height: 15px;
+                &:first-child {
+                    width: 300px;
+                }
+            }
+        }
         span {
             position: absolute;
             background-color: #fff;
             bottom: -30px;
-        }
-        .blue {
-            background-color: blue;
         }
     }
 }

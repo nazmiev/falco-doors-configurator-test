@@ -8,8 +8,12 @@ import { useState } from 'react';
 
 function App() {
   const [color, setColor] = useState('blue');
+  const [filmColor, setFilmColor] = useState('blue');
+  const [handleColor, setHandleColor] = useState('blue');
 
   const changeColor = (value: any) => {setColor(value)}
+  const changeFilmColor = (value: any) => {setFilmColor(value)}
+  const changeHandleColor = (value: any) => {setHandleColor(value)}
 
   console.log('color: ', color)
 
@@ -20,9 +24,17 @@ function App() {
           <Col md="auto">
             <section className={styles.doors}>
               <div className={styles.door} style={{background: color}}>
+                <div className={styles.film} style={{background: filmColor}}>
+                  <div className={styles.handle} style={{background: handleColor}}>
+                  </div>
+                </div>
                 <span>front view</span>
               </div>
-              <div className={styles.door}>
+              <div className={styles.door} style={{background: color}}>
+                <div className={styles.film} style={{background: filmColor}}>
+                  <div className={styles.handle} style={{background: handleColor}}>
+                  </div>
+                </div>
                 <span>back view</span>
               </div>
             </section>
@@ -38,14 +50,14 @@ function App() {
                 <option>yellow</option>
               </Form.Select>
               <Form.Label>Film color</Form.Label>
-              <Form.Select>
+              <Form.Select value={filmColor} onChange={e => changeFilmColor(e.target.value)}>
                 <option>red</option>
                 <option>blue</option>
                 <option>green</option>
                 <option>yellow</option>
               </Form.Select>
               <Form.Label>Doorhandle color</Form.Label>
-              <Form.Select>
+              <Form.Select value={handleColor} onChange={e => changeHandleColor(e.target.value)}>
                 <option>red</option>
                 <option>blue</option>
                 <option>green</option>
