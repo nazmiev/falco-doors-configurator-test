@@ -1,0 +1,22 @@
+.doors {
+    width: 600px;
+    height: 600px;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    .door {
+        width: 200px;
+        height: 500px;
+        background-color: #fff;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        span {
+            position: absolute;
+            background-color: #fff;
+            bottom: -30px;
+        }
+    }
+}
