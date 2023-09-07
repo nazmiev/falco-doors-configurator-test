@@ -21,12 +21,16 @@
             .handle {
                 position: absolute;
                 top: 50%;
-                left: 8%;
+                left: 10%;
                 width: 71px;
                 height: 15px;
-                &:first-child {
-                    width: 300px;
-                }
+            }
+            .righthandle {
+                position: absolute;
+                top: 50%;
+                right: 10%;
+                width: 71px;
+                height: 15px;
             }
         }
         span {

@@ -15,8 +15,6 @@ function App() {
   const changeFilmColor = (value: any) => {setFilmColor(value)}
   const changeHandleColor = (value: any) => {setHandleColor(value)}
 
-  console.log('color: ', color)
-
   return (
     <>
       <Container>
@@ -32,7 +30,7 @@ function App() {
               </div>
               <div className={styles.door} style={{background: color}}>
                 <div className={styles.film} style={{background: filmColor}}>
-                  <div className={styles.handle} style={{background: handleColor}}>
+                  <div className={styles.righthandle} style={{background: handleColor}}>
                   </div>
                 </div>
                 <span>back view</span>
@@ -63,7 +61,7 @@ function App() {
                 <option>green</option>
                 <option>yellow</option>
               </Form.Select>
-              <Form.Label>Width</Form.Label>
+              {/* <Form.Label>Width</Form.Label>
               <Form.Select>
                 <option>regular</option>
                 <option>XL</option>
@@ -83,7 +81,7 @@ function App() {
                 <option>feat1</option>
                 <option>feat2</option>
                 <option>feat3</option>
-              </Form.Select>
+              </Form.Select> */}
             </Form.Group>
             <Button type="submit">Submit</Button>
           </Col>
