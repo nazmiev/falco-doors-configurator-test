@@ -1,27 +1,24 @@
-# React + TypeScript + Vite
+[Прототип](https://nazmiev.github.io/falco-doors-configurator-test/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Тестовое задание Fullstack разработчика<br>
+Нужно сделать “легкий” аналог конфигуратора https://config.dverifalko.ru/?k <br>
+Слева визуальное представление двери;<br>
+Справа варианты вбора параметров;<br>
+Под параметрами кнопка “Отправить комплектацию”.<br>
+<br>
+Выбор цветов ограничиваем стандартными вариантами (красный, синий, зеленый, желтый)<br>
+У всех параметров кроме “Аксессуаров” можно выбрать только одно значение. У “Аксессуаров” можно выбрать несколько (но на визуальной части двери их никак не нужно представлять).<br>
+У каждого значения параметра есть своя цена (она суммируется в итоговую сумму после заполнения всех параметров.<br>
+При смене параметра “Открывание” вид снаружи и изнутри должны “зеркалиться”.<br>
+<br>
+После выбора всех параметров появляется цена и кнопка “Отправить комплектацию”.<br>
+По клику комплектация сохраняется на сервере в БД, так же на сервере генерируется pdf файл с описанием конфигурации и визуальным представлением двери (если чувствуете, что сложно сгенерировать визуальное представление на сервере, тогда добавляйте только таблицу параметров и стоимость), этот pdf файл отправляется сообщением (именно вложенным файлом) в Телеграм.<br>
+Техническая часть<br>
+Верстка “резиновая” с адаптивом под мобильные, по представленному прототипу выше. По желанию можно проявить творчество и “преукрасить” прототип;<br>
+Front-end стек значения не имеет;<br>
+Back-end стэк PHP (версия не новее 7.4) + MySQL (версия 5.5). Будет большим плюсом если сможете показать навыки владения ООП, а так же сделаете документацию с описанием классов, переменных, методов и функций;<br>
+Все параметры (названия и цены) хранятся в БД, там же хранятся все настройки;<br>
+Генерация PDF файла должна выполняться на сервере. В файле должна быть представлена таблица с выбранными параметрами и итоговой ценой. Снизу добавляется итоговая “дилерская” цена, она определяется путем умножения итоговой цены на коэффициент, который так же задается в параметрах (в БД). Если сможете в pdf файл добавить визуальное представление двери - это будет большим плюсом для вас.<br>
+Все отправленные комплектации так же хранятся в БД. Должна быть возможность по запросу заново сформировать pdf файл любой комплектации и отправить в Телеграм.<br>
+Для проекта нужно использовать любую систему контроля версий svn или git (можно использовать github или gitlab).<br>
+Рузультат работы нужно разместить на тестовом хостинге (либо собственном, либо попросить у нас сделать тестовый сервер)
